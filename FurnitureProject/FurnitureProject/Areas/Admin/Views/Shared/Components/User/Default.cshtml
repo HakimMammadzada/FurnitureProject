@@ -1,0 +1,40 @@
+﻿
+@model List<UserModel>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th> @Html.DisplayNameFor(x => Model[0].UserName)</th>
+                            <th> @Html.DisplayNameFor(x => Model[0].Email)</th>
+                            <th>@Html.DisplayNameFor(x => Model[0].AccessDeniedCount)</th>
+                            <th>@Html.DisplayNameFor(x => Model[0].IsLocked)</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            string classname = user.IsLocked ? "badge-pending" : "badge-complete";
+                            string status = user.IsLocked ? "Blocked" : "Active";
+                            <tr>
+                                <td>@user.UserName</td>
+                                <td>@user.Email</td>
+                                <td>@user.AccessDeniedCount</td>
+                                <td>
+                                    <span class="badge @classname">@status</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+

@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = "_AccountLayout";
+}
+@model RegisterModel
+
+    <form asp-action="Register" asp-controller="Account" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label>User Name</label>
+            <input asp-for="Username" class="form-control" placeholder="User Name">
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>Email address</label>
+            <input asp-for="Email" class="form-control" placeholder="Email">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input asp-for="Password" class="form-control" placeholder="Password">
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password">
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Register</button>
+
+        <div class="register-link m-t-15 text-center">
+            <p>Already have account ? <a asp-action="Login" asp-controller="Account"> Sign in</a></p>
+        </div>
+        <a href="index.html" class="btn btn-google btn-user btn-block">
+            <i class="fab fa-google fa-fw"></i> Register with Google
+        </a>
+        <a href="index.html" class="btn btn-facebook btn-user btn-block">
+            <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+        </a>
+    </form>
+
+@*<form class="user">
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+        </div>
+        <div class="col-sm-6">
+            <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+        </div>
+        <div class="col-sm-6">
+            <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
+        </div>
+    </div>
+    <a href="login.html" class="btn btn-primary btn-user btn-block">
+        Register Account
+    </a>
+    <hr>
+    <a href="index.html" class="btn btn-google btn-user btn-block">
+        <i class="fab fa-google fa-fw"></i> Register with Google
+    </a>
+    <a href="index.html" class="btn btn-facebook btn-user btn-block">
+        <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+    </a>
+</form>*@

@@ -1,0 +1,129 @@
+﻿@model ProductModel
+
+<!-- breadcrumb-area start -->
+<div class="breadcrumb-area section-ptb">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="breadcrumb-title">Product Details</h2>
+                <!-- breadcrumb-list start -->
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Product Details</li>
+                </ul>
+                <!-- breadcrumb-list end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-area end -->
+<!-- main-content-wrap start -->
+<div class="main-content-wrap section-ptb product-details-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-7 col-md-6">
+                <div class="product-details-images">
+                    <div class="product_details_container">
+                        <!-- product_big_images start -->
+                        @foreach (var item in Model.Images)
+                        {
+                            <div class="product_big_images_gallery">
+                                <div class="single-product-gallery">
+                                    <a href="~/images/product/@item.Photo" target="_blank" class="img-poppu">
+                                        <img src="~/images/product/@item.Photo" alt="#">
+                                    </a>
+                                </div>
+                            </div>
+                        }
+
+                        <!-- product_big_images end -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-5 col-md-6">
+                <!-- product_details_info start -->
+                <div class="product_details_info">
+                    <h2>Black Clock</h2>
+                    <!-- pro_rating start -->
+                    <div class="pro_rating d-flex">
+                        <ul class="product-rating d-flex">
+                            <li><span class="icon-star"></span></li>
+                            <li><span class="icon-star"></span></li>
+                            <li><span class="icon-star"></span></li>
+                            <li><span class="icon-star"></span></li>
+                            <li><span class="icon-star"></span></li>
+                        </ul>
+                        <span class="rat_qun"> (Based on 0 Ratings) </span>
+                    </div>
+                    <!-- pro_rating end -->
+                    <!-- pro_details start -->
+                    <div class="pro_details">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod temf incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostr exercitation ullamco laboris nisi ut aliquip ex ea. </p>
+                    </div>
+                    <!-- pro_details end -->
+                    <!-- pro_dtl_prize start -->
+                    <ul class="pro_dtl_prize">
+                        <li class="old_prize">@Model.Discount</li>
+                        <li>@Model.Price</li>
+                    </ul>
+                    <!-- pro_dtl_prize end -->
+                    <!-- pro_dtl_color start-->
+                    <div class="pro_dtl_color">
+                        <h2 class="title_2">Choose Colour</h2>
+                        <ul class="pro_choose_color">
+                            @foreach (var color in Model.ProductColors)
+                            {
+                                <li class="red"><a href="#">@color.Color.Name</a></li><br />
+                            }
+
+                        </ul>
+                    </div>
+                    <!-- pro_dtl_color end-->
+                    <!-- pro_dtl_size start -->
+                    <div class="pro_dtl_size">
+                        <h2 class="title_2">Size</h2>
+                        <ul class="pro_choose_size">
+                            <li><a href="#">S</a></li>
+                            <li><a href="#">M</a></li>
+                            <li><a href="#">XL</a></li>
+                            <li><a href="#">XXL</a></li>
+                        </ul>
+                    </div>
+                    <!-- pro_dtl_size end -->
+                    <!-- product-quantity-action start -->
+                    <div class="product-quantity-action">
+                        <div class="prodict-statas"><span>Quantity :</span></div>
+                        <div class="product-quantity">
+                            <form action="#">
+                                <div class="product-quantity">
+                                    <div class="cart-plus-minus">
+                                        <input value="1" type="number">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- product-quantity-action end -->
+                    <!-- pro_dtl_btn start -->
+                    <ul class="pro_dtl_btn">
+                        <li><a href="#" class="buy_now_btn">buy now</a></li>
+                        <li><a href="#"><i class="ion-heart"></i></a></li>
+                    </ul>
+                    <!-- pro_dtl_btn end -->
+                    <!-- pro_social_share start -->
+                    <div class="pro_social_share d-flex">
+                        <h2 class="title_2">Share :</h2>
+                        <ul class="pro_social_link">
+                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                            <li><a href="#"><i class="ion-social-tumblr"></i></a></li>
+                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                            <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- pro_social_share end -->
+                </div>
+                <!-- product_details_info end -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿@model  IEnumerable<FurnitureProject.Data.Entities.BasketProduct>
+
+
+    <div class="shopping-cart-wrap" style="font-size: 25px; left: 38%; bottom: 52%;">
+        <a href="#"><i class="icon-handbag"></i> <span id="cart-total"></span></a>
+        <ul class="mini-cart">
+
+            @foreach (var product in Model)
+            {
+                <li class="cart-item">
+                    <div class="cart-image">
+                        <a href="single-product.html"><img alt="" src="~/images/product/@product.Mainimage"></a>
+                    </div>
+                    <div class="cart-title">
+                        <a href="single-product.html"><h4>@product.Name</h4></a>
+                        <span class="quantity">@product.Quantity</span>
+                        <div class="price-box"><span class="new-price">$@product.Price</span></div>
+                        <a class="remove_from_cart" href="#"><i class="icon-trash icons"></i></a>
+                    </div>
+                </li>
+            }
+            <li class="subtotal-titles">
+                <div class="subtotal-titles"><h3>Sub-Total :</h3><span>$ 230.99</span></div>
+            </li>
+            @*<li class="mini-cart-btns">
+                <div class="cart-btns">
+                    <a href="cart.html">View cart</a>
+                    <a href="checkout.html">Checkout</a>
+                </div>
+            </li>*@
+        </ul>
+    </div>

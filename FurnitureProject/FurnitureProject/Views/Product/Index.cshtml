@@ -1,0 +1,186 @@
+﻿@model IEnumerable<ProductModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- breadcrumb-area start -->
+<div class="breadcrumb-area section-ptb">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="breadcrumb-title">Shop List</h2>
+                <!-- breadcrumb-list start -->
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Shop List</li>
+                </ul>
+                <!-- breadcrumb-list end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-area end -->
+<!-- main-content-wrap start -->
+<div class="main-content-wrap shop-page section-ptb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 order-lg-1 order-1">
+                <!-- shop-product-wrapper start -->
+                <div class="shop-product-wrapper">
+
+                    <div class="row">
+                        <div class="col">
+                            <!-- shop-top-bar start -->
+                            <div class="shop-top-bar">
+                                <!-- product-view-mode start -->
+                                <div class="product-view-mode">
+                                    <!-- shop-item-filter-list start -->
+                                    <ul role="tablist" class="nav shop-item-filter-list">
+                                        <li role="presentation"><a href="#grid" aria-controls="grid" role="tab" data-toggle="tab" aria-selected="true"><i class="ion-ios-keypad-outline"></i></a></li>
+                                        <li role="presentation" class="active"><a class="active show" href="#list" aria-controls="list" role="tab" data-toggle="tab"><i class="ion-ios-list-outline"></i> </a></li>
+                                    </ul>
+                                    <!-- shop-item-filter-list end -->
+                                </div>
+                                <!-- product-view-mode end -->
+                                <!-- product-short start -->
+                                <div class="product-short">
+                                    <p>Sort By:</p>
+                                    <select class="nice-select" name="sortby">
+                                        <option value="trending">Relevance</option>
+                                        <option value="sales">Name (A - Z)</option>
+                                        <option value="sales">Name (Z - A)</option>
+                                        <option value="rating">Price (Low > High)</option>
+                                        <option value="date">Rating (Lowest)</option>
+                                        <option value="price-asc">Model (A - Z)</option>
+                                        <option value="price-asc">Model (Z - A)</option>
+                                    </select>
+                                </div>
+                                <!-- product-short end -->
+                            </div>
+                            <!-- shop-top-bar end -->
+                        </div>
+                    </div>
+
+                    <!-- shop-products-wrap start -->
+                    <div class="shop-products-wrap">
+                        <div class="tab-content">
+                            <div id="grid" class="tab-pane fade active show" role="tabpanel">
+                                <div class="shop-product-wrap">
+                                    <div class="row product">
+                                        <partial name="_ProductPartialView" model="Model" />
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- shop-products-wrap end -->
+                    <!-- paginatoin-area start -->
+                    <div class="paginatoin-area">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <p>Showing 10-13 of 13 item(s) </p>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <ul class="pagination-box">
+                                    <li>
+                                        <a class="Previous" href="#">Previous</a>
+                                    </li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li>
+                                        <a class="Next" href="#"> Next </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- paginatoin-area end -->
+                </div>
+                <!-- shop-product-wrapper end -->
+            </div>
+            <div class="col-lg-3 order-lg-2 order-2">
+                <!-- shop-sidebar-wrap start -->
+                <div class="shop-sidebar-wrap">
+                    <!-- shop-sidebar start -->
+                    <div class="shop-sidebar mb--30">
+                        <h4 class="title">CATEGORIES</h4>
+                        @await Component.InvokeAsync("ProductMenu")
+                    </div>
+                    <!-- shop-sidebar end -->
+                  
+                    <!-- shop-sidebar start -->
+                    <div class="sidbar-product shop-sidebar mb--30">
+                        <h4 class="title">best product</h4>
+                        <!-- sidbar-product-inner start -->
+                        <div class="sidbar-product-inner">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="~/images/product/10.jpg" alt=""></a>
+                            </div>
+                            <div class="product-content text-left">
+                                <h3><a href="product-details.html">Products Name 003</a></h3>
+                                <div class="price-box">
+                                    <span class="new-price">120.00</span>
+                                    <span class="old-price">130.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- sidbar-product-inner end -->
+                        <!-- sidbar-product-inner start -->
+                        <div class="sidbar-product-inner">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="~/images/product/11.jpg" alt=""></a>
+                            </div>
+                            <div class="product-content text-left">
+                                <h3><a href="product-details.html">Products Name 011</a></h3>
+                                <div class="price-box">
+                                    <span class="new-price">140.00</span>
+                                    <span class="old-price">103.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- sidbar-product-inner end -->
+                        <!-- sidbar-product-inner start -->
+                        <div class="sidbar-product-inner">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="~/images/product/5.jpg" alt=""></a>
+                            </div>
+                            <div class="product-content text-left">
+                                <h3><a href="product-details.html">Products Name 008</a></h3>
+                                <div class="price-box">
+                                    <span class="new-price">160.00</span>
+                                    <span class="old-price">121.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- sidbar-product-inner end -->
+                    </div>
+                    <!-- shop-sidebar end -->
+                   
+                </div>
+                <!-- shop-sidebar-wrap end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- main-content-wrap end -->
+@section scripts{
+  <script>
+      $(document).ready(function () {
+          $("#marka").click(function (e) {
+              e.preventDefault();
+              $.ajax({
+                  url: "/Product/GetMarkaById/",
+                  method: "Get",
+                  success: function (result) {
+                      $('.product').append(result); 
+                  }
+                  
+
+              })
+          })
+
+      });
+
+  </script>
+}

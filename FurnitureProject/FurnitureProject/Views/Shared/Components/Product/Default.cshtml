@@ -1,0 +1,17 @@
+﻿@model IEnumerable<ProductModel>
+
+<!-- shop-products start -->
+
+        <div id="grid" class="tab-pane fade active show" role="tabpanel">
+            <div class="shop-product-wrap">
+                <div class="row product">
+                    @foreach (var product in Model)
+                    {
+                        {await Html.RenderPartialAsync("_ProductPartialView", product); }
+
+                    }
+
+                </div>
+            </div>
+       </div>
+<!-- shop-products end -->

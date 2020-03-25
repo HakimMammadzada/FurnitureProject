@@ -1,0 +1,22 @@
+﻿@model IEnumerable<CategoriyModel>
+    <ul class="mega-menu">
+
+        @foreach (var categoriy in Model)
+        {
+            <li>
+                <a href="#">@categoriy.Name</a>
+                <ul>
+                    @if (categoriy.Markas.Any())
+                    {
+                        @foreach (var marka in categoriy.Markas)
+                        {
+                            <li><a href="compare.html">@marka.Name</a></li>
+                        }
+                    }
+                   
+                </ul>
+            </li>
+        }
+
+       
+    </ul>

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ProductModel>
+@foreach (var product in Model)
+{
+    <div class="col-lg-4 col-md-4 col-sm-6 ">
+        <!-- single-product-wrap start -->
+        <div class="single-product-wrap">
+            <div class="product-image">
+                <a href="javascript:void(0)"><img src="/images/product/@product.Mainimage" style="height:180px" alt=""></a>
+                <div class="product-action">
+                    <a href="/Card/Add/@product.Id" class="add-to-cart add"><i class="icon-handbag"></i></a>
+                    <a href="/Product/DetailProduct/@product.Id" target="_blank" class="add-to-cart "><i class="icon-shuffle"></i></a>
+                    @* <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>*@
+                </div>
+            </div>
+            <div class="product-content">
+                <h3><a href="product-details.html">@product.Name</a></h3>
+                <div class="price-box">
+                    <span class="old-price">@product.Discount</span>
+                    <span class="new-price">@product.Price</span>
+                </div>
+            </div>
+        </div>
+        <!-- single-product-wrap end -->
+    </div>
+}
+
+@section scripts{
+    <script>
+        $(".add").click(function (e) {
+            e.preventDefault();
+        })
+    </script>
+
+}
